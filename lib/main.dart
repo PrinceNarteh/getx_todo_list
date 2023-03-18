@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getx_todo_list/app/modules/home/home_view.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -9,15 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("ToDo List"),
-        ),
-        body: const Center(
-          child: Text("ToDo List With GetX"),
-        ),
-      ),
+    return const MaterialApp(
+      title: "ToDo List using GetX",
+      home: HomeScreen(),
     );
   }
 }
