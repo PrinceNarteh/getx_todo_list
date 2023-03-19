@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_todo_list/app/modules/home/home.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:getx_todo_list/app/data/services/storage/services.dart';
+import 'package:getx_todo_list/app/modules/home/home.dart';
 
 void main(List<String> args) async {
   await GetStorage.init();
+  await Get.putAsync(() => StorageService().init());
   runApp(const MyApp());
-} 
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
