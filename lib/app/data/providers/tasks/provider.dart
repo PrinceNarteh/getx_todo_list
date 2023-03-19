@@ -9,7 +9,7 @@ import 'package:getx_todo_list/app/data/services/storage/services.dart';
 class TaskProvider {
   final StorageService _storageService = Get.find<StorageService>();
 
-  List<Task> readTask() {
+  List<Task> readTasks() {
     var tasks = <Task>[];
     jsonDecode(_storageService.read(taskKey).toString()).forEach(
       (task) => tasks.add(Task.fromJson(task)),
@@ -17,7 +17,7 @@ class TaskProvider {
     return tasks;
   }
 
-  void writeTask(List<Task> tasks) {
+  void writeTasks(List<Task> tasks) {
     _storageService.write(taskKey, jsonEncode(tasks));
   }
 }
