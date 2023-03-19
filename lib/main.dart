@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:getx_todo_list/app/data/services/storage/services.dart';
@@ -15,9 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       title: "ToDo List using GetX",
-      home: HomeScreen(),
+      home: const HomeScreen(),
+      initialBinding: HomeBinding(),
+      builder: EasyLoading.init(),
     );
   }
 }
